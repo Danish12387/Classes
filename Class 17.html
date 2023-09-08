@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <h1>Array in Java Script</h1>
+    <script>
+        //to add or delete the element
+        let animals=['Dog', 'Cat', 'Fly', 'Bug', 'Ox']
+        console.log(animals)
+        
+        //only delete the element using splice
+        animals.splice(2, 3)
+        // animals.splice(2, animals.length-2) to remove all elements after index 2
+        console.log(animals)
+
+        //only add element using splice
+        animals.splice(2, 0, 'Lion', 'Donkey', 'Bird')
+        console.log(animals)
+
+        //add and remove elements together using splice
+        animals.splice(0, 3, 'Danish', 'Noman', 'Ashir') 
+        console.log(animals)
+
+        //to copy the element from array we use slice
+        let sliceanimals=animals.slice(2, 4)
+        console.log(sliceanimals)
+
+        animals.length=0
+        console.log(animals)
+
+        let evenNum=[]
+        let oddNum=[]
+        for (let i = 1; i<=100; i++){
+            if (i % 2 === 0 && i % 5 === 0){
+                evenNum.push(i)
+            }else{
+                oddNum.push(i)
+            }
+        }
+        console.log(evenNum)
+        console.log(oddNum)
+
+        let number=prompt("Table of Number you want to see.")
+        for (let i=1; i<=10; i++){
+           let str=number + ' x ' + i + ' = ' + number*i + '<br />'
+           document.write(str)
+        }
+    </script>
+</body>
+</html>

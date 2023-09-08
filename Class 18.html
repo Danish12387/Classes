@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <h2>Array in Java Script</h2>
+    <script>
+        // const temperature= [72, 78, 82, 88, 95]
+        // let tempabove80=0
+        // for(let i=0; i<temperature.length; i++){
+        //     if(temperature[i]>=80){
+        //         tempabove80++
+        //     }
+        // }
+        // document.write(tempabove80 + ' days temeprature was above 80 degree.')
+
+        // const numbers= [5, 10, 15, 20, 25]
+        // const indexbyuser=+prompt('Enter index')
+        // const numbyuser=+prompt('Enter Number.')
+        // numbers.splice(indexbyuser, 0, numbyuser)
+        // console.log(numbers)
+
+        // let weekdays=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'friday', 'Saturday', 'Sunday']
+        // for (let i=0; i<weekdays.length; i++){
+        //     console.log(weekdays[i])
+        // }
+
+        // let months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        // for (let i=0; i<months.length; i++){
+        //     console.log(months[i])
+        // }
+
+        //Take a month number from the user using prompt and display teh month name of that number.
+        // Prompt the user for a month number
+        var monthNumber = +prompt("Enter a month number (1-12):");
+        // Check if the input is valid
+        if (monthNumber >= 1 && monthNumber <= 12) {
+        // Array of month names
+        var monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+         // Display the corresponding month name
+         var monthName = monthNames[monthNumber - 1];
+         alert("The month is " + monthName + '.');
+        } else {
+        alert("Invalid month number. Please enter a number between 1 and 12.");
+        }
+    </script>
+</body>
+</html>

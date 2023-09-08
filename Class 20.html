@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <h2>Functions in Java Script</h2>
+    <script>
+        // split -> To convert string into array we use split method.
+        // let productinfo = 'small, portable, beautiful, colorful'
+        // console.log(productinfo.split(','))
+
+        // Join -> Convert Array into string.
+        // let productinfo = ['small', ' portable', ' beautiful', ' colorful']
+        // let productinfoStr = productinfo.join(',')
+        // console.log(productinfoStr)
+
+        // Concat -> To combine two arrays into single array.
+        // let productinfo = ['small', ' portable', ' beautiful', ' colorful']
+        // let productinfo1 = ['Abd', ' def', ' nice', ' very dangerous']
+        // let newArray = productinfo1.concat(productinfo)
+        // console.log(newArray)
+
+        // Index of
+        let cities = ['karachi','lahore','islamabad','peshawar','larkana']
+        const cityName = prompt('Enter city name.')
+        const cityname = cityName.toLowerCase()
+        if(cities.indexOf(cityname) == -1){
+            cities.push(cityname)
+        }
+        else if(typeof cityname === 'number'){
+            alert('Invalid city name.')
+        }
+        else{alert('City already exist.')}
+        console.log(cities)
+    </script>
+</body>
+</html>

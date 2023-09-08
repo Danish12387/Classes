@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        .img{
+            position: relative;
+            width: 300px;
+            border: 2px solid grey;
+            display: inline-block;
+            padding-top: 0;
+            margin-left: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .img img{
+            height: 300px;
+            width: 300px;
+
+        }
+        .img img:hover{
+            height: 310px;
+            width: 320px;
+        }
+        .img h3{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background-color: white;
+            margin: 0;
+            border-bottom-left-radius: 7px;
+        }
+        .img h2{
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div class="container">
+    <div class="img">
+        <img src="/Images/coffee.jpg" alt="">
+        <h2>Get the Coffee</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <h3>10% Discount</h3>
+    </div>
+    <div class="img">
+        <img src="/Images/coffee.jpg" alt="">
+        <h2>Get the Coffee</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <h3>10% Discount</h3>
+    </div>
+    <div class="img">
+        <img src="/Images/coffee.jpg" alt="">
+        <h2>Get the Coffee</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <h3>10% Discount</h3>
+    </div>
+ </div>
+</body>
+</html>

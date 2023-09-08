@@ -1,0 +1,13 @@
+div{
+    height: 200px;
+    width: 1000px;
+    max-width: 1000px;
+    min-width: 200px;
+    background-color: aqua;
+}
+.sub-div{
+    background-color: white;
+    height: 70%;
+    width: 70%;
+    border: 2px solid red;
+}

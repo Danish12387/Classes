@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <h2>Java Script Function</h2>
+    <div>
+        <input id="input" type="text" value="" placeholder="String">
+        <button onclick="countVowel()">Submit</button>
+    </div>
+    <script>
+        function countVowel(){
+            let string = document.getElementById('input').value
+            console.log(string)
+            console.log(countVowelsNum(string))
+            // alert(countVowelsNum)
+        }
+        function countVowelsNum (str){
+            let vowelsCount = 0
+            const vowels = ['a','e','i','o','u']
+            for(var i = 0; i < str.length; i++){
+                if(vowels.includes(str[i])){
+                    console.log(str[i])
+                    vowelsCount++
+                }
+            }
+            return vowelsCount
+        }
+    </script>
+</body>
+</html>
