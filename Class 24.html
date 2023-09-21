@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="h2"></h2>
+    <input type="date" id="userAgeInput">
+    <button onclick="countAge()">Check</button>
+    <div id="result"></div>
+    <script>
+        let date = new Date()
+        let object = { month: 'long', day: 'numeric', year: 'numeric' }
+        let formatted = date.toLocaleDateString('en-US', object)
+        let h2 = document.getElementById('h2')
+        h2.innerHTML = formatted
+
+        function countAge() {
+            let userAgeInput = document.getElementById('userAgeInput').value
+            let today = new Date()
+            let userAge = new Date(userAgeInput)
+            let age = today.getFullYear() - userAge.getFullYear()
+            if(today.getMonth() < userAge.getMonth() || today.getMonth() === userAge.getMonth() && today.getDate() < userAge.getDate()){
+                age--
+            }
+            let result = document.getElementById('result')
+            result.innerHTML = age
+        }
+    </script>
+</body>
+
+</html>

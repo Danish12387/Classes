@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Satisfy;
+            font-size: 1.2rem;
+            background-color: rgb(255, 240, 212);
+        }
+        h1{
+            color: orange;
+        }
+        span{
+            color: rgb(0, 0, 180);
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To <span style="display: block;">Innovative Biscuits</span></h1>
+    <!--Types of function 
+    
+    Named Function
+    funciton abc(){}
+
+    Anonymous Function
+    const greetings = function(){alert('greetings')}
+
+    Arrow Function
+    const hello = ()=>alert('Hello')
+    
+
+    First we declare a fuction and then we call/invoke it.
+
+    The data that we pass while caliing/invoking a function is called Argument.
+    greetings('Hello')
+    -->
+    <script>
+        let car = {name:'Tesla', model:'S', isNew:false, usedBy:['Ahmed', 'Bilal'], average:function(){
+            return '10/hr'
+        }}
+        // update property in the object
+        car.model = "Z"
+        
+        // Add property in the object
+        car.color = "black"
+
+        // delete property in the object
+        delete car.average 
+        console.log(car)
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #car_img{
+            width: 500px;
+            height: 600px;
+        }
+        .container{
+            display: flex;
+        }
+        .car_img{
+            flex: 1;
+        }
+        .text{
+            flex: 1;
+            font-size: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        span{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="car_img">
+            <img id="car_img" src="" alt="">
+        </div>
+        <div class="text">
+            <div >Name: <span id="car-name"></span></div>
+            <div>Model: <span id="car-model"></span></div>
+            <div>Color: <span id="car-color"></span></div>
+            <div>UsedBy: <span id="car-usedBy"></span></div>
+            <div>Is New: <span id="car-isNew"></span></div>
+        </div>
+    </div>
+    <script>
+        let carName = document.getElementById('car-name')
+        let carModel = document.getElementById('car-model')
+        let carColor = document.getElementById('car-color')
+        let carUsedBy = document.getElementById('car-usedBy')
+        let carIsNew = document.getElementById('car-isNew')
+        let carImg = document.getElementById('car_img')
+        let car = {
+            name:'Mercedes', model:'2020',color:'Black',usedBy:['Ahmed',' Bilal'], isNew:false, img:"https://images.unsplash.com/photo-1625690079412-d7ce9758730f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1530&q=80"
+    }
+
+    carImg.src = car.img
+    carName.innerHTML = car.name
+    carModel.innerHTML = car.model
+    carIsNew.innerHTML = car.isNew ? 'Its New Car.' : 'No its not new.'
+    carColor.innerHTML = car.color
+    carUsedBy.innerHTML = car.usedBy
+    </script>
+</body>
+</html>
