@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="User name">
+    <button id="button" >Update</button>
+    <h1 id="heading"></h1>
+    <script>
+        console.log(localStorage)
+
+        //for create and update
+
+        //localStorage.setItem(Key, value)
+
+        //set item function have two parameters
+        // 1.key
+        // 2.value (value will always in string)
+
+        //we convert array and objects into string by using
+        // JSON.stringify(value)
+
+        // for deleting an item 
+        //localStorage.removeItem(value)
+
+        //for getting an item
+        //localStorage.getItem()
+
+        // for deleting all the values
+        // localStorage.clear()
+
+        let input = document.getElementById('input')
+        let button = document.getElementById('button')
+        let h1 = document.getElementById('heading')
+
+        let saveData = () => {
+            localStorage.setItem('username' , input.value)
+            h1.innerHTML = 'Hello ' + localStorage.getItem('username')
+            input.value = ''
+        }
+
+        button.addEventListener('click', saveData)
+    </script>
+</body>
+</html> 
