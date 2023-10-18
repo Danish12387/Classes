@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <input type="text">
+    <button>Submit</button>
+    </div>
+    <script>
+        let products = [
+    { name: "Product A", price: 10.99 },
+    { name: "Product B", price: 15.49 },
+    { name: "Product C", price: 7.99 },
+    { name: "Product D", price: 22.99 },
+    { name: "Product E", price: 5.99 }
+    ]
+
+    let cont = document.querySelector('.container')
+
+    // products.forEach((item)=> {console.log(`${item.name} ${item.price}`)
+    // cont.innerHTML += `${item.name} ${item.price} </br>`
+    // })
+
+    let input = document.querySelector('input')
+    let btn = document.querySelector('button')
+    btn.addEventListener('click', ()=> {
+    console.log(input.value)
+    input.value = ''
+    })
+    </script>
+</body>
+</html>
