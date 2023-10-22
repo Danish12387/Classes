@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #box {
+            display: none;
+            height: 150px;
+            width: 420px;
+            margin: auto;
+            margin-top: 40px;
+            box-shadow: 0px 0px 5px 1px rgb(216, 216, 216);
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-    <input type="text">
-    <button>Submit</button>
-    </div>
+    <form id="form">
+        <input type="text" id="input1" placeholder="Enter your name">
+        <input type="text" id="input2" placeholder="Enter your email">
+        <button>Submit</button>
+    </form>
+    <div class="container"></div>
+    <div id="box"></div>
     <script>
         let products = [
-    { name: "Product A", price: 10.99 },
-    { name: "Product B", price: 15.49 },
-    { name: "Product C", price: 7.99 },
-    { name: "Product D", price: 22.99 },
-    { name: "Product E", price: 5.99 }
-    ]
+            { name: "Product A", price: 10.99 },
+            { name: "Product B", price: 15.49 },
+            { name: "Product C", price: 7.99 },
+            { name: "Product D", price: 22.99 },
+            { name: "Product E", price: 5.99 }
+        ]
 
-    let cont = document.querySelector('.container')
+        let cont = document.querySelector('.container')
+        let arr = []
 
-    // products.forEach((item)=> {console.log(`${item.name} ${item.price}`)
-    // cont.innerHTML += `${item.name} ${item.price} </br>`
-    // })
+        // products.forEach((item)=> {console.log(`${item.name} ${item.price}`)
+        // cont.innerHTML += `${item.name} ${item.price} </br>`
+        // })
 
-    let input = document.querySelector('input')
-    let btn = document.querySelector('button')
-    btn.addEventListener('click', ()=> {
-    console.log(input.value)
-    input.value = ''
-    })
+        let form = document.querySelector('#form')
+        let input1 = document.querySelector('#input1')
+        let input2 = document.querySelector('#input2')
+        let btn = document.querySelector('button')
+        let div = document.querySelector('#box')
+
+        let addValue = ()=>{
+            let obj = {
+                name: input1.value,
+                email: input2.value
+            }
+            arr.push(obj)
+            console.log(input1.value)
+            console.log(input2.value)
+            console.log(arr)
+            input1.value = ''
+            input2.value = ''
+            div.innerHTML += `<h2>${obj.name}, ${obj.email}</h2>`
+            div.style.display = 'block'
+        }
+
+        form.addEventListener('submit',(event)=>{
+            event.preventDefault()
+            addValue()
+        })
+
+        btn.addEventListener('click', addValue)
     </script>
 </body>
+
 </html>
