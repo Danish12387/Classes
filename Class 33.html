@@ -11,6 +11,10 @@
         }
 
         #box {
+<<<<<<< HEAD
+=======
+            display: none;
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
             height: 150px;
             width: 420px;
             margin: auto;
@@ -27,9 +31,14 @@
         <input type="text" id="input2" placeholder="Enter your email">
         <button>Submit</button>
     </form>
+<<<<<<< HEAD
     <button id="btn">About</button>
     <div class="container"></div>
     <!-- <div id="box"></div> -->
+=======
+    <div class="container"></div>
+    <div id="box"></div>
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
     <script>
         let products = [
             { name: "Product A", price: 10.99 },
@@ -49,9 +58,14 @@
         let form = document.querySelector('#form')
         let input1 = document.querySelector('#input1')
         let input2 = document.querySelector('#input2')
+<<<<<<< HEAD
         let btn1 = document.querySelector('#btn')
         let div = document.createElement('div')
         div.id = 'box'
+=======
+        let btn = document.querySelector('button')
+        let div = document.querySelector('#box')
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
 
         let addValue = ()=>{
             let obj = {
@@ -62,14 +76,22 @@
             console.log(input1.value)
             console.log(input2.value)
             console.log(arr)
+<<<<<<< HEAD
             div.innerHTML = `<h2>${obj.name}, ${obj.email}</h2>`
             cont.appendChild(div)
             localStorage.setItem('userData', JSON.stringify(arr))
+=======
+            input1.value = ''
+            input2.value = ''
+            div.innerHTML += `<h2>${obj.name}, ${obj.email}</h2>`
+            div.style.display = 'block'
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
         }
 
         form.addEventListener('submit',(event)=>{
             event.preventDefault()
             addValue()
+<<<<<<< HEAD
             input1.value = ''
             input2.value = ''
         })
@@ -77,6 +99,11 @@
         btn1.addEventListener('click', ()=>{
             window.location.href = 'Class 33b.html'
         })
+=======
+        })
+
+        btn.addEventListener('click', addValue)
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
     </script>
 </body>
 

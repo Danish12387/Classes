@@ -22,6 +22,10 @@
 </head>
 <body>
     <button id="changecolorBtn">Change Color</button>
+<<<<<<< HEAD
+=======
+    <button onclick="changeCardBackgroundColor()">Change cards color</button>
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
     <div class="main">
     <div class="dabbay">
         <h1>Products</h1>
@@ -81,12 +85,22 @@
             )`
         }
         function changeCardBackgroundColor(){
+<<<<<<< HEAD
             let allCard = document.getElementByClassName('dabbay')
+=======
+            let allCard = document.getElementsByClassName('dabbay')
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
             let bg = `rgb(
                 ${generateRandomnumber()},
                 ${generateRandomnumber()},
                 ${generateRandomnumber()}
             )`
+<<<<<<< HEAD
+=======
+            for(let i = 0; i<allCard.length; i++){
+                allCard[i].style.backgroundColor = bg
+            }
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
         }
     </script>
 </body>

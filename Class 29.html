@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAVA SCRIPT</title>
     <style>
+<<<<<<< HEAD
         body{
             transition: all .5s ease-out;
             position: relative;
@@ -21,6 +22,8 @@
             display: none;
             z-index: 1;
         }
+=======
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
         h1{
             text-align: center;
         }
@@ -35,6 +38,7 @@
             border: 5px solid grey;
             margin: 20px;
             border-radius: 10px;
+<<<<<<< HEAD
             cursor: pointer;
             transition: all .2s ease-out;
         }
@@ -101,10 +105,13 @@
             margin: 0px;
             padding-top: 10px;
             margin-bottom: 15px;
+=======
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
         }
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <div id="body-before"></div>
     <div id="container">
         <h1>Image Gallery</h1>
@@ -115,6 +122,11 @@
         </div>
         <div id="ImageContainer"></div>
     </div>
+=======
+    <h1>Image Gallery</h1>
+    <div id="ImageContainer"></div>
+    <button id="button" onclick="displayImages()">Click</button>
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
     <script>
         const imageArray = [
     "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
@@ -145,6 +157,7 @@
         let img = document.createElement('img')
         img.src = imageArray[i]
         img.className = 'img-card'
+<<<<<<< HEAD
         img.addEventListener('click', showImagePopup)
         imgCont.appendChild(img)
     }
@@ -195,6 +208,12 @@
         bodyBefore.style.display = 'block'
         popupClose.style.display = 'block'
     }
+=======
+        imgCont.appendChild(img)
+    }
+    // let button = document.getElementById('button')
+    // button.addEventListener('click', displayImages() )
+>>>>>>> e8cf38bfc1d555dead90c46c64bd9a0654d06355
     </script>
 </body>
 </html>
