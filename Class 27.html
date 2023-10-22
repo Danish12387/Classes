@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        .test-div{
+            background-color: rgb(255, 237, 192);
+            border-radius: 5px;
+            width: 500px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+
+        }
+        .test-div-title{
+            padding: 0px;
+            margin: 0;
+            display: inline-block;
+        }
+        .sub{
+            text-align: center;
+        }
+        #input{
+            height: 40px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            font-size: 18px;
+        }
+        #input::placeholder{
+            font-size: 18px;
+        }
+        .sub button{
+            height: 43px;
+            width: 100px;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            background-color: rgb(255, 204, 75);
+            border: 1px solid rgb(255, 204, 75);
+            font-size: 16px;
+            margin-left: 5px;
+            border-radius: 5px;
+        }
+        .sub button:hover{
+            transform: scale(1.08);
+        }
+        .test-div-btn{
+            height: 40px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: rgb(255, 67, 67);
+            border: none;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            color: white;
+            font-size: 16px;
+        }
+        .test-div-btn:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="first-child">
+        <h1 id="first-grand-child">First Grand Child.</h1>
+        <h1>Second Grand Child.</h1>
+    </div>
+    <div class="sub">
+        <input type="text" id="input" placeholder="Add todo">
+        <button onclick="createChild()">Add Todo</button>
+    </div>
+    <div id="container"></div>
+    <script>
+        let firstChild = document.getElementById('first-child')
+        console.log("first child", firstChild.childNodes)
+
+        let firstGrandChild = document.getElementById('first-grand-child')
+        console.log('first Grand Child', firstGrandChild.parentNode)
+
+        let input = document.getElementById('input')
+
+        function createChild(){
+            let div = document.createElement('div')
+            div.className = 'test-div'
+
+            let divTitle = document.createElement('h2')
+            divTitle.className = 'tet-div-title'
+            divTitle.innerText = input.value
+
+            let divBtn = document.createElement('button')
+            divBtn.className = 'test-div-btn'
+            divBtn.innerHTML = 'Delete'
+            divBtn.onclick = function() {
+                div.remove()
+            }
+
+            div.appendChild(divTitle)
+            div.appendChild(divBtn)
+
+            container.appendChild(div)
+        }
+    </script>
+</body>
+</html>

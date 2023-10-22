@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .dabbay{
+            height: 300px;
+            width: 200px;
+            text-align: center;
+            border: 1px solid black;
+            margin: 10px;
+            min-width: 200px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="changecolorBtn">Change Color</button>
+    <div class="main">
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+    <div class="dabbay">
+        <h1>Products</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit illo adipisci velit molestias laborum sint exercitationem quod! Rerum dignissimos porro dolor quo fugit qui harum, debitis odit necessitatibus esse labore explicabo, voluptatibus itaque.</p>
+    </div>
+</div>
+    <script>
+        document.getElementById('changecolorBtn').addEventListener('click', changeBodyColor)
+
+        function generateRandomnumber() {
+            const number = Math.round(Math.random() * 190 )
+            return number
+        }
+        function changeBodyColor() {
+            let body = document.getElementsByTagName('body')
+            console.log(body[0])
+            body[0].style.backgroundColor = `rgb(
+                ${generateRandomnumber()},
+                ${generateRandomnumber()},
+                ${generateRandomnumber()}
+            )`
+        }
+        function changeCardBackgroundColor(){
+            let allCard = document.getElementByClassName('dabbay')
+            let bg = `rgb(
+                ${generateRandomnumber()},
+                ${generateRandomnumber()},
+                ${generateRandomnumber()}
+            )`
+        }
+    </script>
+</body>
+</html>

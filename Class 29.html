@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA SCRIPT</title>
+    <style>
+        body{
+            transition: all .5s ease-out;
+            position: relative;
+            margin: 0px;
+            padding: 0px;
+        }
+        #body-before{
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(7, 7, 7, .2);
+            display: none;
+            z-index: 1;
+        }
+        h1{
+            text-align: center;
+        }
+        #ImageContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .img-card{
+            height: 350px;
+            width: 300px;
+            border: 5px solid grey;
+            margin: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .2s ease-out;
+        }
+        .img-card:hover{
+            transform: scale(1.05);
+        }
+        #button{
+            text-align: center;
+            height: 50px;
+            width: 120px;
+            background-color: rgb(58, 58, 58);
+            color: white;
+            border: 2px solid grey;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all .2s ease-out;
+        }
+        #button:hover{
+            background-color: rgb(37, 37, 37);
+            transform: scale(1.05);
+        }
+        #modal{
+            height: 500px;
+            width: 400px;
+            background-color: white;
+            border: 2px solid grey;
+            position: fixed;
+            top: 17%;
+            left: 38%;
+            width: 400px;
+            height: 500px;
+            text-align: center;
+            display: none;
+            transition: all 1s ease-out;
+            border-radius: 10px;
+            z-index: 2;
+        }
+        #close-popup{
+            height: 35px;
+            width: 40px;
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 0, .1);
+            font-weight: bold;
+            position: fixed;
+            top: 50px;
+            right: 100px;
+            font-size: 30px;
+            display: none;
+            z-index: 5;
+        }
+        #modal-img{
+            height: 90%;
+            width: 90%;
+            margin-top: 30px;
+        }
+        #container{
+            text-align: center;
+        }
+        h1{
+            margin: 0px;
+            padding-top: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="body-before"></div>
+    <div id="container">
+        <h1>Image Gallery</h1>
+        <button id="button">Change Theme</button>
+        <span id="close-popup">&times;</span>
+        <div id="modal">
+            <img src="" alt="" id="modal-img">
+        </div>
+        <div id="ImageContainer"></div>
+    </div>
+    <script>
+        const imageArray = [
+    "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+    "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+    "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+    "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+    "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+    "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+    "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+    "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+    "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+    "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+    "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+    "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+    "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+    "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+    "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+    "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+    "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+];
+
+    let imgCont = document.getElementById('ImageContainer')
+    
+    for(let i = 0; i < imageArray.length; i++){
+        let img = document.createElement('img')
+        img.src = imageArray[i]
+        img.className = 'img-card'
+        img.addEventListener('click', showImagePopup)
+        imgCont.appendChild(img)
+    }
+    let changeThemeFunction = false
+    function changeTheme(){
+        changeThemeFunction = !changeThemeFunction
+        let body = document.body
+        if(changeThemeFunction){
+            body.style.backgroundColor = 'black'
+            body.style.color = 'white'
+        }
+        else{
+            body.style.backgroundColor = 'white'
+            body.style.color = 'black'
+        }
+    }
+
+    let button = document.getElementById('button')
+    button.addEventListener('click', changeTheme)
+
+    const popup = document.getElementById('modal')
+    const popupClose = document.getElementById('close-popup')
+    const popupImg = document.getElementById('modal-img')
+
+    let body = document.body
+    let container = document.getElementById('container')
+    let bodyBefore = document.getElementById('body-before')
+
+    function closePopup(){
+        popup.style.display = 'none'
+        body.style.overflow = 'scroll'
+        container.style.paddingRight = '0px'
+        bodyBefore.style.display = 'none'
+        popupClose.style.display = 'none'
+    }
+
+    popupClose.addEventListener('click', closePopup)
+    bodyBefore.addEventListener('click', closePopup)
+
+    function showImagePopup(){
+        popup.style.display = 'block'
+        popup.style.transitionProperty = 'all'
+        popup.style.transitionDuration = '1s'
+        popup.style.transitionTimingFunction = 'ease-in'
+        popupImg.src = this.src
+        body.style.overflow = 'hidden'
+        container.style.paddingRight = '17px'
+        bodyBefore.style.display = 'block'
+        popupClose.style.display = 'block'
+    }
+    </script>
+</body>
+</html>

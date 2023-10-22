@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <style>
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(330deg, #daecfd 20%, #daecfd 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0px;
+            background-image: url(../Assignments/Imgages/samuele-errico-piccarini-FMbWFDiVRPs-unsplash.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        body::before{
+            content: '';
+            position: absolute;
+            background-color: black;
+            opacity: .3;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+        #car_img{
+            width: 500px;
+            height: 600px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+            height: 80vh;
+            width: 100%;
+            padding-left: 250px;
+            padding-right: 0px;
+        }
+        .sub{
+            display: flex;
+        }
+        .car_img{
+            /* flex: 1; */
+        }
+        .text{
+            /* flex: 1; */
+            font-size: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 86%;
+            width: 500px;
+            color: white;
+        }
+        span{
+            font-weight: 550;
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 20px;
+            /* background-color: aqua; */
+            /* width: 100%; */
+            /* margin: auto; */
+            width: 400px;
+        }
+        .input input{
+            height: 40px;
+            width: 400px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #003e77;
+            font-size: 20px;
+        }
+        .input button{
+            width: 400px;
+            height: 45px;
+            background-color: #7dc0ff;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+        }
+        .input button:hover{
+            transform: scale(1.05);
+            background-color: #69b7ff;
+        }
+        input::placeholder{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+                <input type="text" id="carname" placeholder="Enter Car Name" required maxlength="25">
+                <input type="text" id="carmodel" placeholder="Enter Model" required maxlength="25">
+                <input type="text" id="carcolor" placeholder="Enter Color" required maxlength="25">
+                <input type="text" id="carusedBy" placeholder="Enter Users(XXX, XXX)" required maxlength="25">
+                <input type="text" id="carisNew" placeholder="IsNew" required maxlength="25">
+                <button onclick="submit()">Submit</button>
+        </div>
+        <div class="sub">
+            <!-- <div class="car_img">
+                <img id="car_img" src="" alt="">
+            </div> -->
+            <div class="text">
+                <div >Name: <span id="car-name"></span></div>
+                <div>Model: <span id="car-model"></span></div>
+                <div>Color: <span id="car-color"></span></div>
+                <div>UsedBy: <span id="car-usedBy"></span></div>
+                <div>Is New: <span id="car-isNew"></span></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let carName = document.getElementById('car-name')
+        let carModel = document.getElementById('car-model')
+        let carColor = document.getElementById('car-color')
+        let carUsedBy = document.getElementById('car-usedBy')
+        let carIsNew = document.getElementById('car-isNew')
+        let carImg = document.getElementById('car_img')
+    //     let car = {
+    //         name:'Mercedes', model:'2020',color:'Black',usedBy:['Ahmed',' Bilal'], isNew:false, img:"https://images.unsplash.com/photo-1625690079412-d7ce9758730f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1530&q=80"
+    // }
+
+    let CarName = document.getElementById('carname')
+    let Name = CarName.value.toUpperCase()
+    let CarModel = document.getElementById('carmodel')
+    let CarColor = document.getElementById('carcolor')
+    let CarUsedBy = document.getElementById('carusedBy')
+    let CarIsNew = document.getElementById('carisNew')
+
+    // carImg.src = car.img
+    function submit(){
+    carName.innerText = CarName.value.toUpperCase()
+    carModel.innerText = CarModel.value
+    carIsNew.innerText = CarIsNew.value
+    carColor.innerText = CarColor.value
+    carUsedBy.innerText = CarUsedBy.value
+    }
+    </script>
+</body>
+</html>

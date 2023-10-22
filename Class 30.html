@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+
+<body>
+    <h1>Arrow Functions</h1>
+    <script>
+        //normal function
+        function normal() {
+            return 'Normal Function'
+        }
+        console.log(normal('bilal')) /*agar user ne koi value nhi di to default value lag jaigi jo test hai.*/
+        
+        function normal(name ='test') {
+            console.log(this)
+            return 'Hello' + name
+        }
+
+        //arrow function
+        const arrow = () => 'Arrow Function'
+        const arrow1 = name => {
+            console.log(this)
+            return 'Hello' + name
+        }
+    </script>
+</body>
+
+</html>

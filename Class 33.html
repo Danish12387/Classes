@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #box {
+            height: 150px;
+            width: 420px;
+            margin: auto;
+            margin-top: 40px;
+            box-shadow: 0px 0px 5px 1px rgb(216, 216, 216);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" id="input1" placeholder="Enter your name">
+        <input type="text" id="input2" placeholder="Enter your email">
+        <button>Submit</button>
+    </form>
+    <button id="btn">About</button>
+    <div class="container"></div>
+    <!-- <div id="box"></div> -->
+    <script>
+        let products = [
+            { name: "Product A", price: 10.99 },
+            { name: "Product B", price: 15.49 },
+            { name: "Product C", price: 7.99 },
+            { name: "Product D", price: 22.99 },
+            { name: "Product E", price: 5.99 }
+        ]
+
+        let cont = document.querySelector('.container')
+        let arr = []
+
+        // products.forEach((item)=> {console.log(`${item.name} ${item.price}`)
+        // cont.innerHTML += `${item.name} ${item.price} </br>`
+        // })
+
+        let form = document.querySelector('#form')
+        let input1 = document.querySelector('#input1')
+        let input2 = document.querySelector('#input2')
+        let btn1 = document.querySelector('#btn')
+        let div = document.createElement('div')
+        div.id = 'box'
+
+        let addValue = ()=>{
+            let obj = {
+                name: input1.value,
+                email: input2.value
+            }
+            arr.push(obj)
+            console.log(input1.value)
+            console.log(input2.value)
+            console.log(arr)
+            div.innerHTML = `<h2>${obj.name}, ${obj.email}</h2>`
+            cont.appendChild(div)
+            localStorage.setItem('userData', JSON.stringify(arr))
+        }
+
+        form.addEventListener('submit',(event)=>{
+            event.preventDefault()
+            addValue()
+            input1.value = ''
+            input2.value = ''
+        })
+
+        btn1.addEventListener('click', ()=>{
+            window.location.href = 'Class 33b.html'
+        })
+    </script>
+</body>
+
+</html>
