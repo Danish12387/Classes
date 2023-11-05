@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forcast</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button id="btn">Click</button>
+    <script>
+        const input = document.getElementById('input')
+        const btn = document.getElementById('btn')
+
+        btn.addEventListener('click',()=>{
+            const inputValue = input.value
+            fetch(`https://api.weatherapi.com/v1/current.json?key=3b90744069da4e9fa8853358230111&q=${inputValue}&aqi=no`)
+            .then(response=> response.json())
+            .then(data=>{
+                console.log(data)
+            }).catch(err => console.log(err.message))
+        })
+    </script>
+</body>
+</html>

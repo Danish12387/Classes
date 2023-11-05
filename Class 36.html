@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loops in Java Script</h1>
+    <script>
+        let arr=['danish','noman','bilal','murtaza','wahab']
+        let i = 0
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log('for loop=>',arr[i]);
+        }
+
+        //white loop
+        while(i<arr.length){
+            console.log('while loop=>', arr[i])
+            i++
+        }
+
+        do{
+            console.log('do while loop=>',arr[i])
+            i++
+        } while( i < arr.length)
+
+        //Switch Case
+
+        //De Structuring of object
+
+        let obj = {
+            weather: 'this is weather',
+            temperature: 'this is temperature'
+        }
+        console.log('normal=>',obj.weather)
+        console.log('normal=>',obj.temperature)
+
+        const {weather, temperature} = obj
+        console.log('destructured=>weather:',weather);
+        console.log('destructured=>temperature:',temperature);
+
+        //The names of variables can also change
+
+        const {weather: wth, temperature: tmp} = obj
+        console.log('destructured=>wth:',wth);
+        console.log('destructured=>tmp:',tmp);
+
+        const timing = ['9 am','10am','11am']
+
+        console.log('normal',timing[0]);
+        console.log('normal',timing[1]);
+        console.log('normal',timing[2]);
+
+        let [first, second, third] = timing
+
+        console.log('destructured',first)
+        console.log('destructured',second)
+        console.log('destructured',third)
+     </script>
+</body>
+</html>
