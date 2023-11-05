@@ -11,7 +11,6 @@
         }
 
         #box {
-            display: none;
             height: 150px;
             width: 420px;
             margin: auto;
@@ -28,8 +27,8 @@
         <input type="text" id="input2" placeholder="Enter your email">
         <button>Submit</button>
     </form>
+    <button id="btn">About</button>
     <div class="container"></div>
-    <div id="box"></div>
     <script>
         let products = [
             { name: "Product A", price: 10.99 },
@@ -49,8 +48,9 @@
         let form = document.querySelector('#form')
         let input1 = document.querySelector('#input1')
         let input2 = document.querySelector('#input2')
-        let btn = document.querySelector('button')
-        let div = document.querySelector('#box')
+        let btn1 = document.querySelector('#btn')
+        let div = document.createElement('div')
+        div.id = 'box'
 
         let addValue = ()=>{
             let obj = {
@@ -61,18 +61,21 @@
             console.log(input1.value)
             console.log(input2.value)
             console.log(arr)
-            input1.value = ''
-            input2.value = ''
-            div.innerHTML += `<h2>${obj.name}, ${obj.email}</h2>`
-            div.style.display = 'block'
+            div.innerHTML = `<h2>${obj.name}, ${obj.email}</h2>`
+            cont.appendChild(div)
+            localStorage.setItem('userData', JSON.stringify(arr))
         }
 
         form.addEventListener('submit',(event)=>{
             event.preventDefault()
             addValue()
+            input1.value = ''
+            input2.value = ''
         })
 
-        btn.addEventListener('click', addValue)
+        btn1.addEventListener('click', ()=>{
+            window.location.href = 'Class 33b.html'
+        })
     </script>
 </body>
 
