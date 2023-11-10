@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Firebase</h1>
+    <h1>Register</h1>
+    <form>
+        <input type="text" value="Danish" required placeholder="Full Name">
+        <input type="email" value="danishshah2203651@gmail.com" required placeholder="Enter your Email">
+        <input type="password" value="kinganonymous" required placeholder="Enter Password">
+        <input type="submit" value="Register">
+    </form>
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAHQyxWbE0KXf5RYphu1syMdxxLciEq-Jk",
+            authDomain: "blog-app-ab7a6.firebaseapp.com",
+            projectId: "blog-app-ab7a6",
+            storageBucket: "blog-app-ab7a6.appspot.com",
+            messagingSenderId: "993767007431",
+            appId: "1:993767007431:web:ef1a307738ba35d1a40ae2",
+            measurementId: "G-1Z0SBNGKMJ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app)
+
+        console.log('app-->', app)
+        console.log('auth-->', auth)
+
+        const form = document.querySelector('form')
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const userInfo = {
+                name: e.target[0].value,
+                email: e.target[1].value,
+                password: e.target[2].value
+            }
+            console.log(e);
+            console.log(userInfo)
+            createUserWithEmailAndPassword(auth, userInfo.email, userInfo.password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                });
+        })
+ 
+
+    </script>
+</body>
+
+</html>

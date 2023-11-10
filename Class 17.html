@@ -10,7 +10,7 @@
     <script>
         //to add or delete the element
         let animals=['Dog', 'Cat', 'Fly', 'Bug', 'Ox']
-        console.log(animals)
+        console.log(animals)            
         
         //only delete the element using splice
         animals.splice(2, 3)
@@ -35,7 +35,7 @@
         let evenNum=[]
         let oddNum=[]
         for (let i = 1; i<=100; i++){
-            if (i % 2 === 0 && i % 5 === 0){
+            if (i % 2 === 0){
                 evenNum.push(i)
             }else{
                 oddNum.push(i)
@@ -46,7 +46,7 @@
 
         let number=prompt("Table of Number you want to see.")
         for (let i=1; i<=10; i++){
-           let str=number + ' x ' + i + ' = ' + number*i + '<br />'
+           let str = `${number} x ${i} = ${number * i} <br/>`
            document.write(str)
         }
     </script>
