@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        let cars = [
+            'Mercedes', 'Bently', 'Civic', 'Corolla'
+        ]
+
+        let newCar = cars.map((item)=>{
+            if(item.includes('C')){
+                return item + '- Brand New'
+            }else {
+                return item
+            }
+        })
+
+        console.log(newCar);
+
+        let carsArr = [
+            {
+                name : 'Mercedes',
+                model: 1980,
+                color: 'white'
+            },
+            {
+                name : 'Bently',
+                model: 1993,
+                color: 'Black'
+            },
+            {
+                name : 'Corolla',
+                model: 2002,
+                color: 'Grey'
+            },
+        ]
+
+        let text = 'Moye Moye!'
+
+        console.log(text.split('').reverse().join(''));
+    </script>
+</body>
+</html>
